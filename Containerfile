@@ -4,16 +4,16 @@
 
 ARG BASE_IMAGE
 
-FROM ${BASE_IMAGE}
+FROM docker.io/xyksolutions1/container-nginx:main
 
 LABEL \
         org.opencontainers.image.title="Release Argus" \
         org.opencontainers.image.description="Release and update dashboard" \
-        org.opencontainers.image.url="https://hub.docker.com/r/nfrastack/argus" \
-        org.opencontainers.image.documentation="https://github.com/nfrastack/container-argus/blob/main/README.md" \
-        org.opencontainers.image.source="https://github.com/nfrastack/container-argus.git" \
-        org.opencontainers.image.authors="Nfrastack <code@nfrastack.com>" \
-        org.opencontainers.image.vendor="Nfrastack <https://www.nfrastack.com>" \
+        org.opencontainers.image.url="https://hub.docker.com/r/xyksolutions1/argus" \
+        org.opencontainers.image.documentation="https://github.com/xyksolutions1/container-argus/blob/main/README.md" \
+        org.opencontainers.image.source="https://github.com/xyksolutions1/container-argus.git" \
+        org.opencontainers.image.authors="xyksolutions1" \
+        org.opencontainers.image.vendor="xyksolutions1" \
         org.opencontainers.image.licenses="MIT"
 
 COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
@@ -28,8 +28,8 @@ ENV \
     NGINX_SITE_ENABLED="argus" \
     NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
     NGINX_WORKER_PROCESSES=1 \
-    IMAGE_NAME="nfrastack/argus" \
-    IMAGE_REPO_URL="https://github.com/nfrastack/container-argus/"
+    IMAGE_NAME="xyksolutions1/argus" \
+    IMAGE_REPO_URL="https://github.com/xyksolutions1/container-argus/"
 
 COPY build-assets /build-assets
 
